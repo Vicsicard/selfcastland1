@@ -4,21 +4,15 @@ import { useEffect } from "react";
 import DashboardMockup from "../components/DashboardMockup";
 import ContentExamples from "../components/ContentExamples";
 import SimpleHero from "../components/SimpleHero";
+import { useAnalytics } from "../utils/analytics";
 
 export default function GetStarted() {
-  // Function to track button clicks for GTM
+  // Get analytics functions
+  const { trackCheckout } = useAnalytics();
+  
+  // Function to track button clicks
   const trackCheckoutClick = () => {
-    if (typeof window !== 'undefined' && window.dataLayer) {
-      window.dataLayer.push({
-        'event': 'begin_checkout',
-        'value': 99,
-        'currency': 'USD',
-        'items': [{
-          'item_name': 'Self Cast Content Package',
-          'price': 99
-        }]
-      });
-    }
+    trackCheckout(99);
   };
 
   return (

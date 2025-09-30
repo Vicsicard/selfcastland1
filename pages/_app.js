@@ -1,7 +1,27 @@
 import '../styles/globals.css'
 import Script from 'next/script'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
+import { trackPageView } from '../utils/analytics'
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter()
+  
+  // Track page views
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      trackPageView(url)
+    }
+    
+    // Track initial page load
+    trackPageView(router.asPath)
+    
+    // Track route changes
+    router.events.on('routeChangeComplete', handleRouteChange)
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  }, [router.asPath, router.events])
   return (
     <>
       {/* Google Tag Manager */}

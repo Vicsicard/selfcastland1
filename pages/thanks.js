@@ -1,31 +1,20 @@
 import Head from "next/head";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
+import { useAnalytics } from "../utils/analytics";
 
 export default function Thanks() {
   const router = useRouter();
+  const { trackPurchase } = useAnalytics();
 
-  // Track purchase event for Google Tag Manager
+  // Track purchase event
   useEffect(() => {
-    if (typeof window !== 'undefined' && window.dataLayer) {
-      // Get transaction ID from URL if available
-      const urlParams = new URLSearchParams(window.location.search);
-      const sessionId = urlParams.get('session_id') || new Date().getTime().toString();
-      
-      window.dataLayer.push({
-        'event': 'purchase',
-        'ecommerce': {
-          'transaction_id': sessionId,
-          'value': 99,
-          'currency': 'USD',
-          'items': [{
-            'item_name': 'Self Cast Content Package',
-            'price': 99,
-            'item_id': 'selfcast-content-package'
-          }]
-        }
-      });
-    }
+    // Get transaction ID from URL if available
+    const urlParams = new URLSearchParams(window.location.search);
+    const sessionId = urlParams.get('session_id') || new Date().getTime().toString();
+    
+    // Track the purchase
+    trackPurchase(sessionId, 99);
   }, []);
 
   return (
