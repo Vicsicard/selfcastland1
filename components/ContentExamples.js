@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaLinkedin, FaInstagram } from 'react-icons/fa';
 
 export default function ContentExamples() {
   return (
@@ -32,7 +33,9 @@ export default function ContentExamples() {
         <div className="p-4 space-y-4">
           <div className="border-b pb-3">
             <div className="flex items-center mb-2">
-              <div className="w-8 h-8 rounded-full bg-pink-500 flex items-center justify-center text-white text-xs">IG</div>
+              <div className="w-8 h-8 rounded-full bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#FCAF45] flex items-center justify-center text-white">
+                <FaInstagram className="w-4 h-4" />
+              </div>
               <span className="ml-2 text-sm font-semibold">Instagram</span>
             </div>
             <h3 className="font-montserrat font-semibold">Personal Growth And Continuous Learning Moment</h3>
@@ -42,7 +45,9 @@ export default function ContentExamples() {
           
           <div>
             <div className="flex items-center mb-2">
-              <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-white text-xs">LI</div>
+              <div className="w-8 h-8 rounded-full bg-[#0077b5] flex items-center justify-center text-white">
+                <FaLinkedin className="w-4 h-4" />
+              </div>
               <span className="ml-2 text-sm font-semibold">LinkedIn</span>
             </div>
             <h3 className="font-montserrat font-semibold">Building Meaningful Connections Moment</h3>
