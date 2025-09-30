@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useEffect } from "react";
 import DashboardMockup from "../components/DashboardMockup";
 import ContentExamples from "../components/ContentExamples";
-import SimpleHero from "../components/SimpleHero";
+import EnhancedHero from "../components/EnhancedHero";
 import { useAnalytics } from "../utils/analytics";
 
 export default function GetStarted() {
@@ -42,7 +42,7 @@ export default function GetStarted() {
         </header>
 
         {/* Enhanced Hero */}
-        <SimpleHero onCtaClick={trackCheckoutClick} />
+        <EnhancedHero onCtaClick={trackCheckoutClick} />
 
         {/* Trust / Social Proof */}
         <section className="bg-white py-12 px-6 text-center">
