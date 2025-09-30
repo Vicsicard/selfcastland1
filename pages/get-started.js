@@ -5,6 +5,7 @@ import DashboardMockup from "../components/DashboardMockup";
 import ContentExamples from "../components/ContentExamples";
 import EnhancedHero from "../components/EnhancedHero";
 import { useAnalytics } from "../utils/analytics";
+import { FaLinkedin, FaInstagram, FaFacebookSquare, FaTwitter } from 'react-icons/fa';
 
 export default function GetStarted() {
   // Get analytics functions
@@ -135,7 +136,23 @@ export default function GetStarted() {
                   <span className="text-2xl mr-4">✅</span>
                   <div>
                     <h3 className="font-montserrat font-semibold text-xl mb-2">4 Social Media Posts</h3>
-                    <p className="text-dark">Engaging posts for LinkedIn, Twitter/X, Facebook, and Instagram.</p>
+                    <p className="text-dark">
+                      Engaging posts for:
+                      <div className="flex flex-wrap gap-2 mt-2">
+                        <span className="flex items-center gap-1 bg-[#0077b5] text-white px-2 py-1 rounded-md text-xs">
+                          <FaLinkedin className="w-3 h-3" /> LinkedIn
+                        </span>
+                        <span className="flex items-center gap-1 bg-black text-white px-2 py-1 rounded-md text-xs">
+                          <FaTwitter className="w-3 h-3" /> Twitter/X
+                        </span>
+                        <span className="flex items-center gap-1 bg-[#1877F2] text-white px-2 py-1 rounded-md text-xs">
+                          <FaFacebookSquare className="w-3 h-3" /> Facebook
+                        </span>
+                        <span className="flex items-center gap-1 bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#FCAF45] text-white px-2 py-1 rounded-md text-xs">
+                          <FaInstagram className="w-3 h-3" /> Instagram
+                        </span>
+                      </div>
+                    </p>
                   </div>
                 </div>
               </div>
