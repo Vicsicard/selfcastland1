@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useEffect } from "react";
 import DashboardMockup from "../components/DashboardMockup";
 import ContentExamples from "../components/ContentExamples";
-import EnhancedHero from "../components/EnhancedHero";
+import SimpleHero from "../components/SimpleHero";
 
 export default function GetStarted() {
   // Function to track button clicks for GTM
@@ -48,7 +48,7 @@ export default function GetStarted() {
         </header>
 
         {/* Enhanced Hero */}
-        <EnhancedHero onCtaClick={trackCheckoutClick} />
+        <SimpleHero onCtaClick={trackCheckoutClick} />
 
         {/* Trust / Social Proof */}
         <section className="bg-white py-12 px-6 text-center">

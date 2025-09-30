@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { PhoneIcon, DocumentTextIcon, ChatBubbleBottomCenterTextIcon } from '@heroicons/react/24/outline';
@@ -97,7 +97,7 @@ const EnhancedDashboard = () => {
   );
 };
 
-const EnhancedHero = ({ onCtaClick }) => {
+const SimpleHero = ({ onCtaClick }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -172,12 +172,13 @@ const EnhancedHero = ({ onCtaClick }) => {
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           className="text-center"
+        >
           {/* Headline */}
           <motion.h1 
             variants={itemVariants}
             className="font-montserrat font-bold text-4xl md:text-5xl lg:text-6xl leading-tight"
           >
-            <span className="relative inline-block">
+            Turn a <span className="relative inline-block">
               <span className="relative z-10 text-accent">20-Minute Call</span>
               <span className="absolute bottom-0 left-0 w-full h-3 bg-accent opacity-20 rounded"></span>
             </span> Into <br className="hidden md:block" /> 
@@ -272,4 +273,4 @@ const EnhancedHero = ({ onCtaClick }) => {
   );
 };
 
-export default EnhancedHero;
+export default SimpleHero;
