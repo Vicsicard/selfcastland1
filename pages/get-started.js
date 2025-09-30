@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useEffect } from "react";
 import DashboardMockup from "../components/DashboardMockup";
 import ContentExamples from "../components/ContentExamples";
+import EnhancedHero from "../components/EnhancedHero";
 
 export default function GetStarted() {
   // Function to track button clicks for GTM
@@ -46,47 +47,8 @@ export default function GetStarted() {
           </div>
         </header>
 
-        {/* Hero */}
-        <section className="text-center py-20 px-6 bg-gradient-to-b from-white to-secondary">
-          <div className="max-w-6xl mx-auto">
-            <h1 className="font-montserrat font-bold text-4xl md:text-5xl lg:text-6xl leading-tight">
-              Turn a 20-Minute Call Into <br className="hidden md:block" /> 1 Month of Content
-            </h1>
-            <p className="mt-6 text-lg md:text-xl text-dark max-w-2xl mx-auto">
-              Get your Bio/About page, 4 Blogs, and 4 Social Media Posts — all for just $99.
-            </p>
-            <div className="mt-8 md:mt-12">
-              <a
-                href="https://buy.stripe.com/eVq28r1LKdkBcSM70ycwg14"
-                onClick={trackCheckoutClick}
-                className="btn-primary text-lg"
-                data-testid="hero-cta"
-              >
-                Start for $99
-              </a>
-            </div>
-            <div className="mt-12 md:mt-16 max-w-4xl mx-auto">
-              <div className="relative">
-                <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-                  <div className="w-full md:w-1/2">
-                    <img 
-                      src="/images/hero-image.jpg" 
-                      alt="Turn a phone call into content" 
-                      className="rounded-lg shadow-lg"
-                      onError={(e) => {
-                        e.target.onerror = null;
-                        e.target.style.display = 'none';
-                      }}
-                    />
-                  </div>
-                  <div className="w-full md:w-1/2">
-                    <DashboardMockup />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Enhanced Hero */}
+        <EnhancedHero onCtaClick={trackCheckoutClick} />
 
         {/* Trust / Social Proof */}
         <section className="bg-white py-12 px-6 text-center">
